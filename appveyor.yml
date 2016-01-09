@@ -1,0 +1,24 @@
+﻿# See http://www.appveyor.com/docs/appveyor-yml for many more options
+ 
+# Skip on updates to the readme.
+# We can force this by adding [skip ci] or [ci skip] anywhere in commit message
+skip_commits:
+  message: /updated readme.*/
+
+
+install:
+  - cinst pester
+  - git clone https://github.com/fabiendibot/cSNMP "C:\Program Files\WindowsPowerShell\Modules\cSNMP"
+  - ps: winrm quickconfig -force
+
+build: false
+
+ 
+test_script:
+# Invoke DSC configuration!
+  - ps: . .\Tests\appveyor.ps1
+# Test with native PS version, finalize
+  - ps: . .\Tests\appveyor.pester.ps1 -Test -Finalize
+ 
+deploy_script:
+  - ps: Get-Content .\Artifacts.txt | Foreach-Object { Push-AppveyorArtifact $_ }
