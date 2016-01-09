@@ -53,4 +53,4 @@ here is an example of what can be done.
 
 After that you should now how to apply it - `Test` and `Start-DSCConfiguration` :)
 
-![](https://github.com/fabiendibot/cSNMP/SNMP.png)
+![](https://github.com/fabiendibot/cSNMP/blob/master/SNMP.png)
