@@ -7,6 +7,6 @@ Enable-PSRemoting -Force
 
 . .\Tests\SNMP.ps1
  
-( TestWSUS ).FullName | Set-Content -Path .\Artifacts.txt
+#( Test ).FullName | Set-Content -Path .\Artifacts.txt
  
 Start-DscConfiguration -Path .\Test -Wait -Force -verbose
