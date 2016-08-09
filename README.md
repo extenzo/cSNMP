@@ -8,9 +8,8 @@ It's build and designed for PowerShell v4 & v5. It has been tested only on Windo
 ## How install it ? ##
 In order to install it, just downlooad the zip from Github and extract it in your Powershell Module Path.
 
-## Why can't i find it on PSGallery ? ##
-Because PSGallery is still in preview, and mostly because i'm lazy :) 
-I'll put it on this repo in a near future. 
+## Whant to use PSGallery ? ##
+Here is the link: https://www.powershellgallery.com/packages/cSNMP
 
 ## What resources are available ? ##
 Right now there are 5 resources availables:
