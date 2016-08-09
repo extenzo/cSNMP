@@ -8,7 +8,6 @@ skip_commits:
 
 install:
   - cinst pester
-  - ps: Install-Module cSNMP -Force
   - ps: winrm quickconfig -force
 
 build: false
