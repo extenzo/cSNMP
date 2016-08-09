@@ -1,6 +1,6 @@
 ﻿Configuration Test {
  
-    Import-DscResource -ModuleName cSNMP
+    Import-DscResource -ModuleName @{ModuleName=”cSNMP”;RequiredVersion="0.2"}
  
     Node localhost {
  
