@@ -9,7 +9,7 @@ skip_commits:
 install:
   - cinst pester
   - ps: winrm quickconfig -force
-  - git clone https://github.com/fabiendibot/cSNMP.git 'C:\Program Files\WindowsPowerShell\Modules\cSNMP\0.2'
+  - git clone https://github.com/fabiendibot/cSNMP.git "C:\Program Files\WindowsPowerShell\Modules\cSNMP\0.2"
 
 build: false
 
