@@ -5,6 +5,8 @@
 
 Enable-PSRemoting -Force
 
+ls "C:\Program Files\WindowsPowerShell\Modules\cSNMP\0.2"
+
 . .\Tests\SNMP.ps1
  
 ( Test ).FullName | Set-Content -Path .\Artifacts.txt
