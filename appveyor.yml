@@ -23,5 +23,5 @@ test_script:
  
 deploy_script:
   - ps: Get-Content .\Artifacts.txt | Foreach-Object { Push-AppveyorArtifact $_ }
-  - ps: Publish-Module -Name cSNMP -NuGetApiKey $env:NuGetKey -Verbose -Force
+  - ps: Publish-Module -Name 'C:\Program Files\WindowsPowerShell\Modules\cSNMP' -NuGetApiKey $env:NuGetKey -Verbose -Force
   
