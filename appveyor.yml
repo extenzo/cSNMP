@@ -10,15 +10,18 @@ install:
   - cinst pester
   - ps: winrm quickconfig -force
   - git clone https://github.com/extenzo/cSNMP.git "C:\Program Files\WindowsPowerShell\Modules\cSNMP"
+  - ps: Install-PackageProvider -Name NuGet -Force -Verbose
 
-build: false
+build_script:
+  - ps: Get-PackageProvider -ListAvailable
+  - ps: Get-PackageProvider -Name NuGet
 
  
 test_script:
-# Invoke DSC configuration!
   - ps: . .\Tests\appveyor.ps1
-# Test with native PS version, finalize
   - ps: . .\Tests\appveyor.pester.ps1 -Test -Finalize
  
 deploy_script:
   - ps: Get-Content .\Artifacts.txt | Foreach-Object { Push-AppveyorArtifact $_ }
+  - ps: Publish-Module -Name cSNMP -NuGetApiKey $env:NuGetKey -Verbose
+  
