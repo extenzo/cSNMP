@@ -1,6 +1,10 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+*.ps1 text diff eol=crlf
+*.psm1 text diff eol=crlf
+*.psd1 text diff eol=crlf
+
 # Custom for Visual Studio
 *.cs     diff=csharp
 *.sln    merge=union
